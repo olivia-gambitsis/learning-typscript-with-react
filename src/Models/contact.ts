@@ -1,9 +1,13 @@
+
+
 export interface  Contact{
     name:string;
     phone:string;
-    age: number;
+    address?: Address;
 }
 
-const contacts: Contact[] = [
-    {name:'john Smith', phone: '00983635262', age: 10} 
-]
+export interface Address{
+    city:string;
+    zip:number;
+}
+

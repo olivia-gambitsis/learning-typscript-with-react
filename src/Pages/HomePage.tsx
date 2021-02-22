@@ -4,22 +4,18 @@ import {useContactStore} from '../Stores/ContactStore'
 
 
 
-interface Address {
-    city:string;
-    zip:number;
-}
-
-
-
 
 export const HomePage: FC = () => {
 
-    const contactStore = useContactStore();
+    const {isEmpty, getAll} = useContactStore();
+
 
     return (
     
         <>
         <h1>Contact List </h1>
+        {isEmpty && <p>No contacts found</p>}
+
         {contactStore.getAll.map(c => <p>{c.name}, {c.phone}, {c.address?.city}</p> )}
         </>
     )
